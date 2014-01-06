@@ -1,17 +1,18 @@
-var redir = "steal.production.js?ontraport,development";
+var redir = "steal.js?ontraport,development";
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
-		if (details.url.substr(-40) == "steal.production.js?ontraport,production"){
+		if (details && details.url.substr(-40) == "steal.production.js?ontraport,production"){
 			return {
-				"redirectUrl": details.url.substring(0, details.url.length - 40) + redir
+				// "redirectUrl": details.url.substring(0, details.url.length - 40) + redir,
+				cancel: true
 			};
 		}
 	},
 	{
 		"urls": [
-			"*://staging.ontraport.com/*",
+			"*://staging.ontraport.com/*"
 		],
-		"types": ["script"]
+		"types": ["main_frame", "sub_frame", "stylesheet", "script", "image", "object", "xmlhttprequest", "other"]
 	},
 	["blocking"]
 );

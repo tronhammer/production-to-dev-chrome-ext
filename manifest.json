@@ -6,10 +6,15 @@
 	"background": {
 		"scripts":["background.js"]
 	},
+    "content_scripts": [ {
+		"matches": ["http://staging.ontraport.com/*", "https://staging.ontraport.com/*"],
+		"js": ["load.js"]
+	} ],
 	"permissions": [
 		"*://staging.ontraport.com/*",
 		"webRequest",
-		"webRequestBlocking"
+		"webRequestBlocking",
+		"tabs"
 	],
 	"incognito": "split"
 }
