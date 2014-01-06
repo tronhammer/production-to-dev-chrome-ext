@@ -1,0 +1,15 @@
+{
+	"name": "De-minify Production",
+	"version": "1.0",
+	"manifest_version": 2,
+	"description": "Changes a production minified script to a development non minified script.",
+	"background": {
+		"scripts":["background.js"]
+	},
+	"permissions": [
+		"*://staging.ontraport.com/*",
+		"webRequest",
+		"webRequestBlocking"
+	],
+	"incognito": "split"
+}
