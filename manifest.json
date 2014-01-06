@@ -1,6 +1,6 @@
 {
 	"name": "De-minify Production",
-	"version": "1.0",
+	"version": "1.1",
 	"manifest_version": 2,
 	"description": "Changes a production minified script to a development non minified script.",
 	"background": {
